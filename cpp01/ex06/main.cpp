@@ -6,31 +6,28 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:22:07 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/08 17:10:15 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/09 08:28:34 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main()
+int	main(int	argc, char **argv)
 {
-	Harl	harl;
+	if (argc != 2)
+	{
+		std::cout << "Error: Invalid number of argument: ./harl2.0 <level>" << std::endl;
+		return (0);
+	}
 
-	std::cout << "/***************************************/" << std::endl;
-	std::cout << "call DEBUG fonction" << std::endl;
-	harl.complain("DEBUG");
-	std::cout << "/***************************************/" << std::endl;
-	std::cout << "call INFO fonction" << std::endl;
-	harl.complain("INFO");
-	std::cout << "/***************************************/" << std::endl;
-	std::cout << "call WARNING fonction" << std::endl;
-	harl.complain("WARNING");
-	std::cout << "/***************************************/" << std::endl;
-	std::cout << "call ERROR fonction" << std::endl;
-	harl.complain("ERROR");
-	std::cout << "/***************************************/" << std::endl;
-	std::cout << "call FOO fonction" << std::endl;
-	harl.complain("FOO");
-	std::cout << "/***************************************/" << std::endl;
+	Harl	harl;
+	std::string level = argv[1];
+
+	if (level.empty())
+	{
+		std::cout << "Error: argument <level> is empty" << std::endl;
+		return (0);
+	}
+	harl.filter(level);
 	return (0);
 }

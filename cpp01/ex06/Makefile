@@ -6,7 +6,7 @@
 #    By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 08:53:24 by tdesmet           #+#    #+#              #
-#    Updated: 2022/11/08 17:09:23 by tdesmet          ###   ########.fr        #
+#    Updated: 2022/11/09 08:29:03 by tdesmet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FILES = main.cpp Harl.cpp
 
 OBJS = $(FILES:.cpp=.o)
 
-NAME = harl
+NAME = harl2.0
 
 %.o: %.c
 	@printf "\033[0;33mCompiling camarade: %-33.33s\r" $@

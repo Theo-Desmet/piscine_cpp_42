@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:31:37 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/08 16:59:34 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/09 08:38:13 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,64 @@ void	Harl::complain(std::string level)
 	}
 }
 
+void	Harl::filter(std::string level)
+{
+	std::string level_buf[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::size_t	i = 0;
+
+	for (i; i < 4 ; i++)
+	{
+		if (level == level_buf[i])
+			break;
+	}
+	switch(i)
+	{
+		case 0:
+			Harl::debug();
+			Harl::info();
+			Harl::warning();
+			Harl::error();
+			break;
+		case 1:
+			Harl::info();
+			Harl::warning();
+			Harl::error();
+			break;
+		case 2:
+			Harl::warning();
+			Harl::error();
+			break;
+		case 3:
+			Harl::error();
+			break;
+		default:
+			break;
+	}
+
+}
+
 void	Harl::debug(void)
 {
-	std::cout <<  "this a debug message" << std::endl;
+	std::cout <<  "\033[1;34m[ DEBUG ]" << std::endl;
+	std::cout <<  "this a debug message\033[1;0m" << std::endl << std::endl;
 	return ;
 }
 
 void	Harl::info(void)
 {
-	std::cout <<  "this a info message" << std::endl;
+	std::cout <<  "\033[1;33m[ INFO ]" << std::endl;
+	std::cout <<  "this a info message\033[1;0m" << std::endl << std::endl;
 	return ;
 }
 void	Harl::warning(void)
 {
-	std::cout <<  "this a warning message" << std::endl;
+	std::cout <<  "\033[1;32m[ WARNING ]" << std::endl;
+	std::cout <<  "this a warning message\033[1;0m" << std::endl << std::endl;
 	return ;
 }
 void	Harl::error(void)
 {
-	std::cout <<  "this a error message" << std::endl;
+	std::cout <<  "\033[1;31m[ ERROR ]" << std::endl;
+	std::cout <<  "this a error message\033[1;0m" << std::endl << std::endl;
 	return ;
 }
