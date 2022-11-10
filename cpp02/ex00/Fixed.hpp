@@ -14,7 +14,7 @@ class Fixed {
 
 	private:
 		int		_number;
-		int const	_width = 8;
+		int static const	_width = 8;
 };
 
 #endif
