@@ -6,7 +6,7 @@
 #    By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 08:53:24 by tdesmet           #+#    #+#              #
-#    Updated: 2022/10/27 17:33:13 by tdesmet          ###   ########.fr        #
+#    Updated: 2022/11/09 09:09:52 by tdesmet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILES = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp zombieHorde.cpp
+FILES = Zombie.cpp main.cpp zombieHorde.cpp
 
 OBJS = $(FILES:.cpp=.o)
 

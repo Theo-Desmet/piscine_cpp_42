@@ -6,13 +6,14 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:25:17 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/08 17:20:25 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:29:59 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_H
-# define HARL_H
-# include <iostream>
+#ifndef HARL2_0_EX06_HARL_H
+#define HARL2_0_EX06_HARL_H
+
+#include <iostream>
 
 class Harl
 {

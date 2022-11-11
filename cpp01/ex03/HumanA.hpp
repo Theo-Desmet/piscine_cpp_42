@@ -6,13 +6,14 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 08:14:49 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/07 10:51:12 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:12:27 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_H
-# define HUMANA_H
-# include "Weapon.hpp"
+#ifndef WEAPON_EX03_HUMANA_H
+#define WEAPON_EX03_HUMANA_H
+
+#include "Weapon.hpp"
 
 class	HumanA {
 

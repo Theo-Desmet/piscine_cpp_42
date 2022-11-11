@@ -6,13 +6,14 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 10:08:48 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/10/27 17:22:02 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:06:57 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-# include "header.h"
+#ifndef HORDE_EX01_ZOMBIE_H
+#define HORDE_EX01_ZOMBIE_H
+
+#include <iostream>
 
 class Zombie {
 

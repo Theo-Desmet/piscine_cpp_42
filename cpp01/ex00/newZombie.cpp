@@ -6,11 +6,11 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:24:13 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/10/27 11:24:53 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/09 08:51:56 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "Zombie.hpp"
 
 Zombie *	newZombie( std::string name ) {
 	return (new Zombie(name));

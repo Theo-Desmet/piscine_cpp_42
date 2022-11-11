@@ -6,11 +6,14 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:42:22 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/10/27 11:26:36 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/09 08:50:56 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "Zombie.hpp"
+
+void        randomChump( std::string name );
+Zombie *	newZombie( std::string name );
 
 int	main()
 {

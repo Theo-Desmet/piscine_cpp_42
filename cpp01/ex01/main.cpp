@@ -6,11 +6,13 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:42:22 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/07 08:10:31 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:09:12 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "Zombie.hpp"
+
+Zombie* zombieHorde( int N, std::string name );
 
 int	main()
 {
