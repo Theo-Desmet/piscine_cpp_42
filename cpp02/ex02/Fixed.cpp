@@ -39,23 +39,31 @@ Fixed &	Fixed::operator=(Fixed const & rhs) {
 }
 
 Fixed 	Fixed::operator+(Fixed const & rhs) {
-	this->_number  = this->_number + rhs.getRawBits();
-	return Fixed(this->_number);
+	Fixed	temp(*this);
+
+	temp.setRawBits(temp.getRawBits() + rhs.getRawBits());
+	return (temp);
 }
 
 Fixed 	Fixed::operator-(Fixed const & rhs) {
-	this->_number  -= rhs.getRawBits();
-	return Fixed(this->_number);
-}
+	Fixed	temp(*this);
 
-Fixed 	Fixed::operator/(Fixed const & rhs) {
-	this->_number  = ((_number << this->_width) / rhs.getRawBits());
-	return *this;
+	temp.setRawBits(temp.getRawBits() - rhs.getRawBits());
+	return (temp);
 }
 
 Fixed 	Fixed::operator*(Fixed const & rhs) {
-	this->_number  = (_number * rhs.getRawBits()) >> this->_width;
-	return (*this);
+	Fixed	temp(*this);
+
+	temp.setRawBits((temp.getRawBits() * rhs.getRawBits()) >> this->_width);
+	return (temp);
+}
+
+Fixed 	Fixed::operator/(Fixed const & rhs) {
+	Fixed	temp(*this);
+
+	temp.setRawBits((temp.getRawBits() << temp.getWidth()) / rhs.getRawBits());
+	return (temp);
 }
 
 Fixed 	Fixed::operator++(int) {	//suffixe
