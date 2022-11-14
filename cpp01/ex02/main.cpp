@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 08:06:45 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/11 08:10:58 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/14 08:07:45 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main() {
 	std::cout << "content reference of ref: " << stringREF << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "\033[1;31mmemory address of ptr: " << &stringPTR << std::endl;
+	std::cout << "\033[1;31mmemory address of ptr: " << stringPTR << std::endl;
 	std::cout << "content point by ptr: " << *stringPTR << std::endl;
 	std::cout << "\033[1;0m";
 }

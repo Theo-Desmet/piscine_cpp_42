@@ -6,13 +6,13 @@
 #    By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 08:53:24 by tdesmet           #+#    #+#              #
-#    Updated: 2022/11/09 08:29:03 by tdesmet          ###   ########.fr        #
+#    Updated: 2022/11/14 08:50:21 by tdesmet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CXX = c++
 
-CFLAGS = -std=c++98 -Wall -Werror -Wextra
+CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
 FILES = main.cpp Harl.cpp
 
@@ -20,12 +20,12 @@ OBJS = $(FILES:.cpp=.o)
 
 NAME = harl2.0
 
-%.o: %.c
+%.o: %.cpp
 	@printf "\033[0;33mCompiling camarade: %-33.33s\r" $@
-	@$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	@ $(CC) $(CFLAGS) $(OBJS) -o  $(NAME)
+	@ $(CXX) $(CXXFLAGS) $(OBJS) -o  $(NAME)
 
 all: $(NAME)
 
@@ -37,6 +37,7 @@ fclean: clean
 	@ rm -f $(NAME)
 	@ printf '\033[0;32mfclean done\033[0m\n'
 
-re: fclean all
+re: fclean
+	make all
 
 .PHONY: all clean fclean re

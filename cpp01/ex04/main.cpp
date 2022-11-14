@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 07:53:41 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/11 08:16:06 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/14 08:42:42 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,21 +50,25 @@ int			main(int argc, char **argv)
 		std::cout << "error empty arguments : <filename> <string1> <string2>" << std::endl;
 		return (0);
 	}
-	infile.open(filename, std::ios::in);
+	infile.open(filename.c_str(), std::ios::in);
 	if (!infile.is_open())
 	{
 		std::cout << "error: " << filename << " can't be open"<<std::endl;
 		return (0);
 	}
-	outfile.open(filename.append(".replace"), std::ios::out);
+	outfile.open(filename.append(".replace").c_str(), std::ios::out);
 	if (!outfile.is_open())
 	{
 		std::cout << "error: " << filename.append(".replace") << " can't be open"<<std::endl;
 		return (0);
 	}
 
-	while (std::getline(infile, line))
+	while (std::getline(infile, line) )
 	{
+		if(std::cin.fail()) {
+			std::cout << "error: can't read line"<<std::endl;
+			return (0);
+		}
 		outfile << replace_string(line, s1, s2) << std::endl;
 	}
 	return (0);

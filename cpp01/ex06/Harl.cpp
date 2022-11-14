@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:31:37 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/09 08:38:13 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/14 08:08:15 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	Harl::filter(std::string level)
 	std::string level_buf[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	std::size_t	i = 0;
 
-	for (i; i < 4 ; i++)
+	for (i = 0; i < 4 ; i++)
 	{
 		if (level == level_buf[i])
 			break;
