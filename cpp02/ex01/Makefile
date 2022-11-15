@@ -6,13 +6,13 @@
 #    By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 08:53:24 by tdesmet           #+#    #+#              #
-#    Updated: 2022/11/11 11:07:36 by tdesmet          ###   ########.fr        #
+#    Updated: 2022/11/14 13:46:52 by tdesmet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CXX = c++
 
-CFLAGS = -std=c++98 -Wall -Werror -Wextra
+CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
 FILES = main.cpp Fixed.cpp
 
@@ -21,10 +21,11 @@ OBJS = $(FILES:.cpp=.o)
 NAME = fixed
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@printf "\033[0;33mCompiling camarade: %-33.33s\r" $@
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	@ $(CC) $(CFLAGS) $(OBJS) -o  $(NAME)
+	@ $(CXX) $(CXXFLAGS) $(OBJS) -o  $(NAME)
 
 all: $(NAME)
 
@@ -36,6 +37,7 @@ fclean: clean
 	@ rm -f $(NAME)
 	@ printf '\033[0;32mfclean done\033[0m\n'
 
-re: fclean all
+re: fclean
+	@ make all
 
 .PHONY: all clean fclean re
