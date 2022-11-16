@@ -6,7 +6,7 @@
 #    By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 08:53:24 by tdesmet           #+#    #+#              #
-#    Updated: 2022/11/14 13:46:52 by tdesmet          ###   ########.fr        #
+#    Updated: 2022/11/16 08:25:40 by tdesmet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ OBJS = $(FILES:.cpp=.o)
 NAME = fixed
 
 %.o: %.cpp
-	@printf "\033[0;33mCompiling camarade: %-33.33s\r" $@
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+	@ printf "\033[0;33mCompiling camarade: %-33.33s\r" $@
+	@ $(CXX) $(CXXFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 	@ $(CXX) $(CXXFLAGS) $(OBJS) -o  $(NAME)

@@ -22,8 +22,8 @@ OBJS = $(FILES:.cpp=.o)
 NAME = bsp
 
 %.o: %.cpp
-	@printf "\033[0;33mCompiling camarade: %-33.33s\r" $@
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+	@ printf "\033[0;33mCompiling camarade: %-33.33s\r" $@
+	@ $(CXX) $(CXXFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 	@ $(CXX) $(CXXFLAGS) $(OBJS) -o  $(NAME)
