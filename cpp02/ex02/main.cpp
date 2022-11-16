@@ -103,7 +103,7 @@ int main( void ) {
 	std::cout << "\033[1;33mtest min/max :\033[1;0m"<< std::endl;
 	std::cout << "a = 0, b = -4, c = -4" << std::endl;
 	std::cout << "min(a, b) = -4 : min =" << Fixed::min(a, b) << std::endl;
-	std::cout << "max(a, b) = -4 : max =" << Fixed::max(a, b) << std::endl;
+	std::cout << "max(a, b) = 0 : max =" << Fixed::max(a, b) << std::endl;
 	std::cout << "min(b, c) = -4 : min =" << Fixed::min(b, c) << std::endl;
 	std::cout << "max(b, c) = -4 : max =" << Fixed::max(b, c) << std::endl;
 	return 0;

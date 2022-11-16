@@ -14,16 +14,22 @@ Fixed::Fixed(Fixed const & fixed) {
 	return ;
 }
 
+
+
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 	return ;
 }
+
+
 
 Fixed & Fixed::operator=(Fixed const & rhs) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_number  = rhs.getRawBits();
 	return (*this);
 }
+
+
 
 int	Fixed::getRawBits() const{
 	std::cout << "getRawBits member function called" << std::endl;

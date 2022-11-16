@@ -1,5 +1,5 @@
-#ifndef FIXED_EX00_FIXED_H
-#define FIXED_EX00_FIXED_H
+#ifndef FIXED_CPP02_EX01_FIXED_H
+#define FIXED_CPP02_EX01_FIXED_H
 
 #include <iostream>
 
@@ -10,6 +10,7 @@ class Fixed {
 		Fixed( int const );
 		Fixed( float const );
 		Fixed( Fixed const & );
+
 		~Fixed( void );
 
 		Fixed & operator=( Fixed const & );

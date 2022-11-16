@@ -127,6 +127,8 @@ Fixed const & Fixed::max(Fixed const & fixed1, Fixed const & fixed2) {
 	return((fixed1.getRawBits() > fixed2.getRawBits()) ? fixed1 : fixed2);
 }
 
+
+
 int		Fixed::getRawBits() const{
 	return (this->_number);
 }
@@ -148,6 +150,8 @@ int		Fixed::toInt() const{
 float		Fixed::toFloat() const{
 	return ((float)this->_number / (float)(1 << this->_width));
 }
+
+
 
 std::ostream & operator<<(std::ostream & out, Fixed const & rhs) {
 	out << rhs.toFloat();
