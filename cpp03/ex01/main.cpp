@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 10:27:54 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/17 08:26:46 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/17 09:03:46 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ int	main() {
 		std::cout << blue << std::endl;
 		blue.beRepaired(3);
 	}
+    std::cout << std::endl << "********** test special ************" << std::endl;
+	blue.guardGate();
+	foo.guardGate();
+	bar.guardGate();
 
 	std::cout << std::endl << "********* call destructor **********" << std::endl;
 }
