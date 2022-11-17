@@ -6,23 +6,24 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 10:27:54 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/16 15:44:30 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/17 08:26:46 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main() {
 	std::cout << "************** init ***************" << std::endl;
-	ClapTrap	foo;
 	ClapTrap	red(RED);
-	ClapTrap	red2(red);
-	ClapTrap	blue(BLUE);
-	foo = blue;
+	ScavTrap	blue(BLUE);
+	ScavTrap	foo(blue);
+	ScavTrap	bar;
+	bar = foo;
 
-	std::cout << std::endl << "********** test attack ************" << std::endl;
+	std::cout << std::endl << "********** test attacks ************" << std::endl;
 	red.attack("bar");
 	red.attack(BLUE);
 	blue.attack(RED);
@@ -31,25 +32,14 @@ int	main() {
 
 	std::cout << std::endl << "********** test repar/damage ************" << std::endl;
 	for (int i = 0; i < 4; i++) {
-		std::cout << red << std::endl;
-		red.takeDamage(3);
+		std::cout << blue << std::endl;
+		blue.takeDamage(40);
 	}
-	std::cout << red <<std::endl;
+	std::cout << blue <<std::endl;
 	for (int i = 0; i < 3; i++) {
-		std::cout << red << std::endl;
-		red.beRepaired(3);
+		std::cout << blue << std::endl;
+		blue.beRepaired(3);
 	}
-	std::cout << red << std::endl << std::endl;
-
-	std::cout << std::endl << "************ test energy **************" << std::endl;
-	for (int i = 0; i < 10; i++) {
-		std::cout << red2 << std::endl;
-		red2.attack("bar");
-	}
-	std::cout << red2 << std::endl;
-	red2.attack("bar");
-	std::cout << red2 << std::endl;
-	red2.beRepaired(0);
 
 	std::cout << std::endl << "********* call destructor **********" << std::endl;
 }

@@ -6,7 +6,7 @@
 #    By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 08:53:24 by tdesmet           #+#    #+#              #
-#    Updated: 2022/11/16 11:38:50 by tdesmet          ###   ########.fr        #
+#    Updated: 2022/11/17 07:51:21 by tdesmet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = c++
 
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILES = main.cpp ClapTrap.cpp
+FILES = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS = $(FILES:.cpp=.o)
 

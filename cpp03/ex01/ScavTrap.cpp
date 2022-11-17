@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:54:49 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/16 17:01:50 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/17 07:54:41 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ScavTrap::ScavTrap( ScavTrap const & cpy ) : ClapTrap(cpy) {
 		this->_energy_point = cpy.getEnergy();
 		this->_attack_damage = cpy.getDamage();
 		std::cout << "ScavTrap named " << this->_name;
-		std::cout << " created with copy constructor" << std::endl;
+		std::cout << " created with constructor by copy" << std::endl;
 		return ;
 	}
 
@@ -88,7 +88,7 @@ void	ScavTrap::guardGate() {
 }
 
 
-std::ostream &	operator<<(std::ostream & out, ClapTrap const & rhs) {
+std::ostream &	operator<<(std::ostream & out, ScavTrap const & rhs) {
 	out << "name " << rhs.getName()
 		<< ", hp=" << rhs.getHitPoints()
 		<< ", energy=" << rhs.getEnergy()
