@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:54:49 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/17 07:54:41 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/17 15:02:16 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap() {
-		this->_name = "ScavTrap";
 		this->_hit_points = 100;
 		this->_energy_point = 50;
 		this->_attack_damage = 20;
@@ -26,7 +25,6 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-		this->_name = name;
 		this->_hit_points = 100;
 		this->_energy_point = 50;
 		this->_attack_damage = 20;
@@ -36,10 +34,6 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	}
 
 ScavTrap::ScavTrap( ScavTrap const & cpy ) : ClapTrap(cpy) {
-		this->_name = cpy.getName();
-		this->_hit_points = cpy.getHitPoints();
-		this->_energy_point = cpy.getEnergy();
-		this->_attack_damage = cpy.getDamage();
 		std::cout << "ScavTrap named " << this->_name;
 		std::cout << " created with constructor by copy" << std::endl;
 		return ;

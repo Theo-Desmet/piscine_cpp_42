@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:39:21 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/17 08:59:20 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/17 15:01:52 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class FragTrap : public ClapTrap {
 
 		FragTrap & operator=( FragTrap const & cpy );
 
-		void	attack( const std::string& target );
 		void	highFiveGuys( void );
 };
 
