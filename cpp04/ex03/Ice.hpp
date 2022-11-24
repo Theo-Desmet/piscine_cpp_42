@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:31:45 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/22 10:13:10 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/23 15:22:56 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Ice : public AMateria {
         Ice( void );
         Ice( Ice const & cpy );
 
-        ~Ice( void );
+        virtual ~Ice( void );
 
         Ice & operator=( Ice const & cpy);
 

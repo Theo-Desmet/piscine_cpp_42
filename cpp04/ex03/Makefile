@@ -6,19 +6,23 @@
 #    By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 08:53:24 by tdesmet           #+#    #+#              #
-#    Updated: 2022/11/22 09:06:25 by tdesmet          ###   ########.fr        #
+#    Updated: 2022/11/23 11:15:15 by tdesmet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
+CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -g3
 
-FILES = main.cpp
+FILES = main.cpp\
+	AMateria.cpp\
+	Character.cpp\
+	Cure.cpp Ice.cpp\
+	MateriaSource.cpp
 
 OBJS = $(FILES:.cpp=.o)
 
-NAME = animal
+NAME = materia
 
 %.o: %.cpp
 	@ printf "\033[0;33mCompiling camarade: %-33.33s\r" $@

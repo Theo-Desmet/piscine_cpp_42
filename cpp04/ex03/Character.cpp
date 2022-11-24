@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:20:39 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/22 16:24:37 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/24 09:09:05 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,17 @@ Character::Character(Character const & cpy) : _name(cpy.getName()) {
 
 
 Character::~Character() {
-	std::cout << "call destructor of ICharacter" << std::endl;
+	for (size_t i = 0; i < 4; i++) {
+		if (this->_inv[i]) {
+			for (size_t j = i + 1; j < 4; j++) {
+				if (this->_inv[i] == this->_inv[j]){
+					this->_inv[j] = NULL;
+				}
+			}
+			delete _inv[i];
+		}
+	}
 }
-
 
 
 Character &	Character::operator=(Character const & cpy) {
@@ -78,6 +86,6 @@ void Character::unequip(int idx) {
 
 void Character::use(int idx, ICharacter & target) {
 	if (idx >= 0 && idx <= 3 && this->_inv[idx])
-		this->_inv[idx]->AMateria::use(target);
+		this->_inv[idx]->use(target);
 	return ;
 }

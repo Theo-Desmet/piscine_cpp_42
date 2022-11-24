@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:31:45 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/22 11:24:49 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/23 15:23:09 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cure : public AMateria {
         Cure( void );
         Cure( Cure const & cpy );
 
-        ~Cure( void );
+        virtual ~Cure( void );
 
         Cure & operator=( Cure const & cpy);
 

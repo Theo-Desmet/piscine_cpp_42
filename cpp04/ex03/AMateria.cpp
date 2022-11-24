@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 08:16:54 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/22 09:14:38 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/23 13:21:00 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,15 @@
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
-AMateria::AMateria() : _type("Materia Default") {
-	std::cout << "Create class AMateria" << std::endl;
-}
+AMateria::AMateria() : _type("Materia Default") {}
 
-AMateria::AMateria(std::string const & type) : _type(type) {
-	std::cout << "Create class AMateria" << std::endl;
-}
+AMateria::AMateria(std::string const & type) : _type(type) {}
 
-AMateria::AMateria(AMateria const & cpy) : _type(cpy.getType()) {
-	std::cout << "Create class AMateria" << std::endl;
-}
+AMateria::AMateria(AMateria const & cpy) : _type(cpy.getType()) {}
 
 
 
-AMateria::~AMateria() {
-	std::cout << "call destructor of AMateria" << std::endl;
-}
+AMateria::~AMateria() {}
 
 
 
@@ -49,6 +41,5 @@ std::string const & AMateria::getType() const {
 
 
 void	AMateria::use(ICharacter & target) {
-	std::cout << this->_type << ":* default use by "
-		<< target.getName() << " *" << std::endl;
+	(void)target;
 }

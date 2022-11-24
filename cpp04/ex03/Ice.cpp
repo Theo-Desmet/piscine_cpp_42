@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:31:49 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/22 11:22:54 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/23 15:49:06 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ICharacter.hpp"
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("\033[1;34mice\033[1;0m") {}
+Ice::Ice() : AMateria("ice") {}
 
 Ice::Ice(Ice const & cpy) : AMateria(cpy) {}
 
@@ -27,7 +27,8 @@ Ice::~Ice() {}
 
 
 Ice &	Ice::operator=(Ice const & cpy) {
-	this->_type = cpy.getType;
+	this->_type = cpy.getType();
+	return (*this);
 }
 
 
