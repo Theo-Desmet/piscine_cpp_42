@@ -24,8 +24,8 @@ Form::Form() :
 
 Form::Form(std::string const  name, int const grade_signed, int const grade_exec) :
 	_name(name),
-	_grade_sign(50),
-	_grade_exec(20),
+	_grade_sign(grade_signed),
+	_grade_exec(grade_exec),
 	_signed(0) {
 	if (grade_signed < 1)
 		throw (Form::GradeTooHighException());
