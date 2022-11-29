@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:56:06 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:44:41 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/29 11:14:25 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,17 @@ void	Bureaucrat::signForm(Form & form) {
 			<< " because " << e.what() << std::endl;
 	}
 }
+
+void	Bureaucrat::executeForm(Form const & form) {
+	try {
+		form.execute(*this);
+		std::cout << this->_name << " execute " << form.getName() << std::endl;
+	} catch (std::exception & e) {
+		std::cout << this->_name << " couldn't execute " << form.getName()
+			<< " because " << e.what() << std::endl;
+	}
+}
+
 
 
 std::ostream &	operator<<(std::ostream & out, Bureaucrat const & hrs) {

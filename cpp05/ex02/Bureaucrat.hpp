@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 11:13:30 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:40:22 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/29 11:14:10 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Bureaucrat {
 		void	increaseGrade( int const increase );
 		void	decreaseGrade( int const decrease );
 		void	signForm( Form & form );
+		void	executeForm( Form const & form );
 
 		class GradeTooHighException : public std::exception {
 			public:

@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 13:52:10 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:31:29 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/29 10:47:39 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ class Form {
 		int			getGradeExec( void ) const;
 
 		void	beSigned( Bureaucrat michel );
+		void	execute( Bureaucrat const & executor ) const;
+		virtual void	action( void ) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:
@@ -48,6 +50,20 @@ class Form {
 			public:
 				const char * what() const throw() {
 					return ("\033[1;31mExcpetion call: Grade too Low\033[1;0m");
+				}
+		};
+
+		class FormAlreadySignedException : public std::exception {
+			public:
+				const char * what() const throw() {
+					return ("\033[1;31mExcpetion call: Form already signed\033[1;0m");
+				}
+		};
+
+		class ExecWithoutSignedException : public std::exception {
+			public:
+				const char * what() const throw() {
+					return ("\033[1;31mExcpetion call: Form not signed before exec\033[1;0m");
 				}
 		};
 

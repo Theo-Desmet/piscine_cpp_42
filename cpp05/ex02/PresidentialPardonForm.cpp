@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.cpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:56:06 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:57:09 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/29 10:59:26 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,14 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
-	: Form("PresidentialPardonForm", 145, 137, 0) {
-	}
+PresidentialPardonForm::PresidentialPardonForm() :
+	Form("PresidentialPardonForm", 25, 5), _target("default") {}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const target) :
-	: Form("PresidentialPardonForm", 145, 137, 0) {}
-}
+	Form("PresidentialPardonForm", 25, 5) , _target(target){}
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & cpy) {
-	this->Form::operator=(cpy);
-	return (*this);
-}
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & cpy) :
+	Form(cpy) {}
 
 
 
@@ -35,54 +31,28 @@ PresidentialPardonForm::~PresidentialPardonForm() {}
 
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & cpy) {
-	this->_signed = cpy.getSigned();
+	this->Form::operator=(cpy);
 	return (*this);
 }
 
 
 
-void	PresidentialPardonForm::action() {
-	std::ofstream	outfile.open(this->target + "_shrubbery");
+std::string	PresidentialPardonForm::getTarget() const {
+	return(this->_target);
+}
 
-	                                                                                
-	outfile << "                                         * ";
-	outfile  << "                                /*## */( ///  (/( ";
-	outfile  << "                         .,( (*,##*(%./%//%/*.*/   //,. ";
-	outfile  << "                       /%#((*,,*/#/#%(*(*/* */%/ **#(((// ";
-	outfile  << "                    /(./#*##/**%(%///*#/***( ,((((#&&&(#*.. ";
-	outfile  << "              .,.*(#(*//&%*#%,(##(##%(#((((/*(#%&/(/*%(#((#( ";
-	outfile  << "           .#,((/#//%(/#*(%#*%%#&%%#((%&((#%*(/%&,###,#%%&%(/, ";
-	outfile  << "          . /,((#**#(/#%*/##/(#%%&%%(/(%#%#(#,* %(%//%#*##%##//% ";
-	outfile  << "        .  (# (&((%&%((%*#&&#/. *&&%(/@&&%#/*((##,(&(%&%#&*#((/.,/* ";
-	outfile  << "      ,((/(*%%%##(*#%,/##/#%%(%&*/(((#&&%%%#%/#%( *&%(@//*/,%&%*.*#, ";
-	outfile  << "         *(/#&%#%&%(#%#@###/#%%%%#%&%&##(%*%(&&#&%#%%/(##&&(#%&/##/#, ";
-	outfile  << "         /,((@%(((#%((%%%%#(%/%&%*&%&%/%((&#((#&#%#%&%(&&#(%%&(%%&#((#&((. ";
-	outfile  << "           ,. #**%%&#&%#&%#%%&%#*&,%%##/.#%%%#/#%%%%%&&&&&###%##*&/.%%#&%/ ";
- 	outfile  << "     (   (/ ((%&%&%&#&%##&%(%%&%%&//(/#/%&%%%&#%/%#&%&%&(/%&%//(%(#(//*(( ";
- 	outfile  << "   ,((/%*/%&(**%%(%&%%&%#%&#&&%&*(((//%#/(.##@(&&%@&&%###(%&*%%#(#&*/ ";
- 	outfile  << "     /(#(((%%#%%&&%#&&&&%%&&&%&@(&%%#&%&&%(&#&#&&&&%&%/#%%&&*&&* #/ , ";
- 	outfile  << "       ,(#(////&&&#*&#&%&&&&&%#&#&&&&&%&##.#%%%/%#%%%%%@&%&%(&&(/*%##%#*% ";
- 	outfile  << "   ((#%#&%(/(#(%%#(%&&&&&%%&#%%%#/&@@(&#/#((#&&((((%%%&&&#(/((%(%*&&%%%%/# ";
- 	outfile  << "     /&%%#(/#*/#(%#%&&%%%&&&##%%#(%%%(&&#%&%&###.#*(.%#&%%&%&(%%#&#@%%%## ";
- 	outfile  << "    *(*%%%%%&&/((((#&&&@&&%#&#%&%%%#%%&&%#&/%/%&( (/*&&@&(%@%&(&#%#((%#(% ";
- 	outfile  << "       ,*#/#(%#&%#%&##&.%&#(% &&#%#&%((&%%&#%&@%&#%#(.,%# %&&&@%@&*. ";
- 	outfile  << "       %/*#%#&%%%%&#%%#(#/(##%#&%#(#%%&,*&  %%@%#%/&%#     %%&%%# ";
- 	outfile  << "          %.(./%%%&#         #&&&(%%          (%.#%%/( ";
- 	outfile  << "             (/### *            *### ";
- 	outfile  << "                                .#(* ";
- 	outfile  << "                                #((/ ";
- 	outfile  << "                                ((// ";
- 	outfile  << "                                (/(/ ";
- 	outfile  << "                                */(( ";
- 	outfile  << "                       .,**(/(*/*/((#(#((//,. ";
-                                                                                
+
+
+void	PresidentialPardonForm::action() const {
+	std::cout  << this->_target << "have receve an presidential pardon" << std::endl;
 }
 
 
 
 std::ostream &	operator<<(std::ostream & out, PresidentialPardonForm const & hrs) {
-	out << hrs.getName() << ", PresidentialPardonForm signed: " << hrs.getSigned()
-		<< ", PresidentialPardonForm grade signed: " << hrs.getGradeSigned()
-		<< ", PresidentialPardonForm grade exec: " << hrs.getGradeExec();
+	out << hrs.getName() << ", signed: " << hrs.getSigned()
+		<< ", grade signed: " << hrs.getGradeSigned()
+		<< ", grade exec: " << hrs.getGradeExec()
+		<< ", target: " << hrs.getTarget();
 	return (out);
 }

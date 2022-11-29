@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 13:52:10 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:31:29 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/29 13:16:03 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_H
-#define FORM_H
+#ifndef SHRUBBERY_CREATION_FORM_H
+#define SHRUBBERY_CREATION_FORM_H
 
 #include <iostream>
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 class ShrubberyCreationForm : public Form {
 	public:
@@ -26,8 +27,13 @@ class ShrubberyCreationForm : public Form {
 		~ShrubberyCreationForm( void );
 
 		ShrubberyCreationForm &	operator=( ShrubberyCreationForm const & cpy );
+
+		std::string	getTarget( void ) const;
+
+		void	action( void ) const;
+
 	private:
-		std::string _target;
+		std::string const _target;
 };
 
 std::ostream &	operator<<(std::ostream & out, ShrubberyCreationForm const & hrs);

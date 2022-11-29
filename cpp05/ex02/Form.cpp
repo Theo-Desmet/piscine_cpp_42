@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:56:06 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:57:09 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/29 13:30:32 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,22 @@ bool		Form::getSigned() const {
 
 
 void	Form::beSigned(Bureaucrat michel) {
+	if (this->_signed)
+		throw Form::FormAlreadySignedException();
 	if (michel.getGrade() > this->_grade_sign)
 		throw Form::GradeTooLowException();
 	this->_signed = 1;
+
+	return ;
+}
+
+void	Form::execute(Bureaucrat const & executor) const {
+	if (!this->_signed)
+		throw Form::ExecWithoutSignedException();
+	if (executor.getGrade() > this->_grade_exec)
+		throw Form::GradeTooLowException();
+	this->action();
+	return ;
 }
 
 

@@ -6,7 +6,7 @@
 #    By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 08:53:24 by tdesmet           #+#    #+#              #
-#    Updated: 2022/11/25 15:56:43 by tdesmet          ###   ########.fr        #
+#    Updated: 2022/11/29 09:58:46 by tdesmet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,12 @@ CXX = c++
 
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
-FILES = ShrubberyCreationForm.cpp main.cpp Bureaucrat.cpp Form.cpp
+FILES = ShrubberyCreationForm.cpp\
+		PresidentialPardonForm.cpp\
+		RobotomyRequestForm.cpp\
+		main.cpp\
+		Bureaucrat.cpp\
+		Form.cpp
 
 OBJS = $(FILES:.cpp=.o)
 
