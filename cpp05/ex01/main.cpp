@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 08:58:53 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:59:22 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/30 08:29:47 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main() {
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << "try to create form(\"\033[1;33mgreen_form\033[1;0m\", 100, 120)" << std::endl;
 	try {
 		Form	green_form("\033[1;33mgreen_form\033[1;0m", 100, 120);
@@ -32,6 +33,7 @@ int main() {
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << "try to create form(\"\033[1;31mred_form\033[1;0m\", 1, 1)" << std::endl;
 	try {
 		Form	red_form("\033[1;31mred_form\033[1;0m", 1, 1);
@@ -51,6 +53,7 @@ int main() {
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << "try to create form(\"\033[1;34mblue_form\033[1;0m\", 10, 0)" << std::endl;
 	try {
 		Form	blue_form("\033[1;34mblue_form\033[1;0m", 0, 20);
@@ -58,6 +61,7 @@ int main() {
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << "try to create form(\"\033[1;33mgreen_form\033[1;0m\", 151, 120)" << std::endl;
 	try {
 		Form	green_form("\033[1;34mgreen_form\033[1;0m", 151, 120);
@@ -65,6 +69,7 @@ int main() {
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << "try to create form(\"\033[1;33mgreen_form\033[1;0m\", 100, 151)" << std::endl;
 	try {
 		Form	green_form("\033[1;34mgreen_form\033[1;0m", 100, 151);
@@ -99,6 +104,7 @@ int main() {
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << jean << std::endl;
 	std::cout << green_form << std::endl;
 	try {
@@ -125,6 +131,7 @@ int main() {
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	std::cout << jean << std::endl;
 	std::cout << red_form << std::endl;
 	try {
@@ -132,6 +139,17 @@ int main() {
 			<< " whit " << jean.getName() << std::endl;
 		jean.signForm(red_form);
 		std::cout << red_form << std::endl << std::endl;
+	} catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << michel << std::endl;
+	std::cout << blue_form << std::endl;
+	try {
+		std::cout << "try to sign form " << blue_form.getName()
+			<< " whit " << michel.getName() << std::endl;
+		michel.signForm(blue_form);
+		std::cout << blue_form << std::endl << std::endl;
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}

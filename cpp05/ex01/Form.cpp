@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:56:06 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:57:09 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/30 08:28:20 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ bool		Form::getSigned() const {
 
 
 void	Form::beSigned(Bureaucrat michel) {
+	if (this->_signed)
+		throw Form::FormAlreadySignedException();
 	if (michel.getGrade() > this->_grade_sign)
 		throw Form::GradeTooLowException();
 	this->_signed = 1;
@@ -82,8 +84,8 @@ void	Form::beSigned(Bureaucrat michel) {
 
 
 std::ostream &	operator<<(std::ostream & out, Form const & hrs) {
-	out << hrs.getName() << ", Form signed: " << hrs.getSigned()
-		<< ", Form grade signed: " << hrs.getGradeSigned()
-		<< ", Form grade exec: " << hrs.getGradeExec();
+	out << hrs.getName() << ", signed: " << hrs.getSigned()
+		<< ", grade signed: " << hrs.getGradeSigned()
+		<< ", grade exec: " << hrs.getGradeExec();
 	return (out);
 }

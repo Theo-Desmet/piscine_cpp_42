@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 13:52:10 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/25 15:31:29 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/30 08:27:41 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,13 @@ class Form {
 			public:
 				const char * what() const throw() {
 					return ("\033[1;31mExcpetion call: Grade too high\033[1;0m");
+				}
+		};
+
+		class FormAlreadySignedException : public std::exception {
+			public:
+				const char * what() const throw() {
+					return ("\033[1;31mExcpetion call: Form already signed\033[1;0m");
 				}
 		};
 
