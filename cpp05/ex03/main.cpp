@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 08:58:53 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/29 16:29:23 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/30 08:17:53 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int main() {
 	Form * buff[3];
 	std::cout << "try to create ShrubberyCreationForm(\"\033[1;33mjardin\033[1;0m\")" << std::endl;
 	try {
-		buff[0] = intern.makeForm("Shrubbery creation" ,"\033[1;33mjardin\033[1;0m");
+		buff[0] = intern.makeForm("shrubbery creation" ,"\033[1;33mjardin\033[1;0m");
 		std::cout << buff[0] << std::endl;
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "try to create RobotomyRequestForm(\"\033[1;35mnorminet\033[1;0m\"" << std::endl;
+	std::cout << "try to create RobotomyRequestForm(\"\033[1;35mnorminet\033[1;0m\")" << std::endl;
 	try {
 		buff[1] = intern.makeForm("robotomy request" ,"\033[1;35mnorminet\033[1;0m");
 		std::cout << buff[1] << std::endl;
@@ -44,6 +44,19 @@ int main() {
 	try {
 		buff[2] = intern.makeForm("presidential pardon" ,"\033[1;34msomeone\033[1;0m");
 		std::cout << buff[2] << std::endl;
+	} catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+
+
+	std::cout << "\033[1;37m********** test invalide init ************* \033[1;0m" << std::endl;
+	Form * test;
+	std::cout << "try to create bad Form(\"\033[1;31mfoo\033[1;0m\")" << std::endl;
+	try {
+		test = intern.makeForm("foo" ,"\033[1;31mfoo\033[1;0m");
+		std::cout << test << std::endl;
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -100,6 +113,16 @@ int main() {
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << michel << std::endl;
+	std::cout << test << std::endl;
+	try {
+		std::cout << "try to exec " << test->getName()
+			<< " whit " << michel.getName() << " without sign " << std::endl;
+		michel.executeForm(*test);
+		std::cout << test << std::endl << std::endl;
+	} catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << std::endl;
 
 
@@ -124,18 +147,6 @@ int main() {
 			<< " whit " << michel.getName() << std::endl;
 		michel.executeForm(*buff[0]);
 		std::cout << *buff[0] << std::endl << std::endl;
-	} catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-
-	std::cout << michel << std::endl;
-	std::cout << *buff[1] << std::endl;
-	try {
-		std::cout << "try to exec " << buff[1]->getName()
-			<< " whit " << michel.getName() << std::endl;
-		michel.executeForm(*buff[1]);
-		std::cout << *buff[1] << std::endl << std::endl;
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}

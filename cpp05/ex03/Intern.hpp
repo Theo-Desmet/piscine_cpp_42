@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 14:03:44 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/29 16:11:01 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/30 07:38:06 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Intern {
 
 		Intern & operator=( Intern const & cpy );
 
-		Form *	makeForm(std::string form, std::string target);
+		Form *	makeForm(std::string form, std::string target) const;
 
 		class	FormNameNotFound : public std::exception {
 			public:

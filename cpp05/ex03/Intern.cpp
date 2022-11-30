@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 14:13:33 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/11/29 16:11:04 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/11/30 07:49:23 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Intern & Intern::operator=(Intern const & cpy) {
 	return (*this);
 }
 
-Form * makeForm(std::string form, std::string target) {
+Form * Intern::makeForm(std::string form, std::string target) const {
 	std::string form_name[3] = {
 		"shrubbery creation",
 		"robotomy request",
@@ -39,7 +39,7 @@ Form * makeForm(std::string form, std::string target) {
 		if (form == form_name[i])
 			break;
 	}
-	Form *	temp;
+	Form *	temp = NULL;
 	switch(i) {
 		case 0:
 			temp = new ShrubberyCreationForm(target);
