@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 08:45:01 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/12/06 08:40:45 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/12/06 10:16:14 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	conv_int(int int_val) {
 		std::cout << "\033[1;32mchar: \033[1;0mimpossible" << std::endl;
 	} else if (isprint(int_val)) {
 		std::cout << "\033[1;32mchar: \033[1;0m"
-			<< "\'" << int_val << "\'"<< std::endl;
+			<< "\'" << static_cast<char>(int_val) << "\'"<< std::endl;
 	} else {
 		std::cout << "\033[1;32mchar: \033[1;0mnon displayable" << std::endl;
 	}
@@ -130,7 +130,7 @@ void	conv_float(float float_val) {
 		std::cout << "\033[1;32mchar: \033[1;0mimpossible" << std::endl;
 	} else if (isprint(float_val)) {
 		std::cout << "\033[1;32mchar: \033[1;0m"
-			<< "\'" << float_val << "\'"<< std::endl;
+			<< "\'" << static_cast<char>(float_val) << "\'"<< std::endl;
 	} else {
 		std::cout << "\033[1;32mchar: \033[1;0mnon displayable" << std::endl;
 	}
@@ -156,7 +156,7 @@ void	conv_double(double double_val) {
 		std::cout << "\033[1;32mchar: \033[1;0mimpossible" << std::endl;
 	} else if (isprint(double_val)) {
 		std::cout << "\033[1;32mchar: \033[1;0m"
-			<< "\'" << double_val << "\'"<< std::endl;
+			<< "\'" << static_cast<char>(double_val) << "\'"<< std::endl;
 	} else {
 		std::cout << "\033[1;32mchar: \033[1;0mnon displayable" << std::endl;
 	}
