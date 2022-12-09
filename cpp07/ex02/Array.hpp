@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 13:31:13 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/12/08 13:03:48 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/12/09 10:03:15 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Array {
 
 		Array & operator=( Array const & cpy ) {
 			this->_size = cpy.size();
-			this->~Array();
+			delete []this->_buff;
 			this->_buff = new T[this->_size];
 			for (unsigned int i = 0; i < this->_size; i++) {
 				this->_buff[i] = cpy._buff[i];

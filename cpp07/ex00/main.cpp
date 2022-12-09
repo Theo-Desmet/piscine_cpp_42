@@ -6,7 +6,7 @@
 /*   By: tdesmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 08:53:22 by tdesmet           #+#    #+#             */
-/*   Updated: 2022/12/06 09:32:30 by tdesmet          ###   ########.fr       */
+/*   Updated: 2022/12/09 08:20:57 by tdesmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main( void ) {
 	std::cout << "\033[1;37m***** test whit int *****\033[1;0m" << std::endl;
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	::swap( a, b );
+	std::cout << "swap(a, b)" << std::endl;
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
@@ -32,6 +33,7 @@ int main( void ) {
 	std::cout << "\033[1;37m***** test whit string *****\033[1;0m" << std::endl;
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	::swap(c, d);
+	std::cout << "swap(c, d)" << std::endl;
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
